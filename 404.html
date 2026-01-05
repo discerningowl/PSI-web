@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Peach State Intertie</title>
+    <meta name="description" content="Page not found on Peach State Intertie">
+
+    <!-- Link to Stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+
+    <style>
+        /* Custom styles for 404 page */
+        .error-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .peach {
+            font-size: 12rem;
+            line-height: 1;
+            animation: float 3s ease-in-out infinite;
+            margin: 2rem 0;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .error-code {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            margin: 1rem 0;
+        }
+
+        .error-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        .home-button {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: var(--light-blue);
+        }
+
+        .quick-links {
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .quick-links a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .quick-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .peach {
+                font-size: 8rem;
+            }
+
+            .error-code {
+                font-size: 2rem;
+            }
+
+            .error-message {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Container for Entire Website -->
+    <div class="site-container">
+
+        <!-- HEADER SECTION -->
+        <header>
+            <h1>PEACH STATE EMERGENCY INTERTIE SYSTEM</h1>
+            <h2>Peach State Intertie</h2>
+            <p class="subtitle">Serving Middle Georgia Amateur Radio Community</p>
+        </header>
+
+        <!-- NAVIGATION BAR -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="diagram.html">Diagrams</a></li>
+                <li><a href="repeaters.html">Repeaters</a></li>
+                <li><a href="nets.html">Nets</a></li>
+                <li><a href="skywarn.html">Skywarn</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <div class="error-container">
+                <h1 class="error-code">404</h1>
+                <div class="peach">🍑</div>
+                <h2 class="error-message">This frequency is not in service!</h2>
+                <p class="error-description">
+                    Looks like you've tuned to a frequency that doesn't exist.
+                    The page you're looking for has gone QRT (off the air).
+                </p>
+                <a href="index.html" class="home-button">Return to Home Frequency</a>
+
+                <div class="quick-links">
+                    <p><strong>Try these frequencies instead:</strong></p>
+                    <a href="repeaters.html">Repeaters</a> |
+                    <a href="nets.html">Nets</a> |
+                    <a href="diagram.html">Diagrams</a> |
+                    <a href="skywarn.html">Skywarn</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-content">
+
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><strong>K4DBN@PEACHSTATEINTERTIE.COM</strong> - Intertie Manager</p>
+                    <p><strong>WB4NFG@PEACHSTATEINTERTIE.COM</strong> - Intertie Assistant Manager & Webmaster</p>
+                </div>
+
+                <hr class="footer-divider">
+
+                <div class="footer-section">
+                    <h3>External Links</h3>
+                    <p>
+                        <a href="https://www.gaares.org" target="_blank">GA ARES</a> |
+                        <a href="https://gaares.org/leadership-test/" target="_blank">ARES Roster</a> |
+                        <a href="http://gssaradio.net/" target="_blank">GSSA Radio</a> |
+                        <a href="http://weather.gov/ffc/" target="_blank">PTC WX</a> |
+                        <a href="http://selinkedrepeater.net/" target="_blank">SELR Net</a> |
+                        <a href="https://www.arrl.org/Groups/view/georgia" target="_blank">ARRL GA</a>
+                    </p>
+                </div>
+
+                <hr class="footer-divider">
+
+                <div class="copyright">
+                    <p>Established 2008 | Webpage Updated January 2026</p>
+                    <p>&copy; Peach State Intertie. All rights reserved.</p>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
