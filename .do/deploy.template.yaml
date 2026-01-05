@@ -1,0 +1,8 @@
+spec:
+  name: peachstateintertie
+  static_sites:
+  - environment_slug: html
+    git:
+      branch: main
+      repo_clone_url: https://github.com/discerningowl/PSI-web.git
+    name: peachstateintertie
