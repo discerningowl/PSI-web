@@ -1,0 +1,207 @@
+/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+a{
+	color: #025586;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration: underline;
+	color: #000000;
+}
+
+*
+{
+	border: 0;
+	margin: 0;
+}
+
+body{
+	color: #000000;
+	background: #73aad5 url(images/bg_all.jpg) repeat-x top;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+#maintop{
+	background: url(images/maintop.png) no-repeat top;
+	width:1003px;
+	padding-top:7px;
+}
+
+#main{
+	width: 1014px;
+}
+
+#mainbot{
+	background: url(images/mainbot.png) no-repeat;
+	width:1003px;
+	height: 7px;
+}
+
+#header{
+	width: 1014px;
+	height: 340px;
+	background: url(images/header.jpg) no-repeat top left;
+}
+
+#logo{
+	padding-left: 40px;
+	text-align: left;
+	padding-top: 120px;
+	height: 180px;
+}
+
+#logo a {
+	text-decoration: none;
+	text-transform: lowercase;
+	font-style: italic;
+	font-size: 16px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+#logo H2 a{
+	font-size: 10px;
+}
+
+#buttons{
+	width: 1014px;
+	height: 37px;
+	padding-left: 11px;
+}
+
+#buttons ul {
+    padding-left: 10px;
+    margin: 0px;
+}
+
+#buttons li {
+	display: inline;		
+}
+
+#buttons a {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight:normal;
+	display: block;
+	float: left;
+	width: 130px;
+	height: 27px;
+	background: url(images/menubg.png) no-repeat left center;
+	text-decoration: none;
+	color: #ffffff;
+	padding-top: 1px;
+	padding-left: 30px;
+	margin-right: 5px;
+}
+
+#buttons a:hover {
+	text-decoration: underline;
+}
+
+#content{
+	width: 1003px;
+	background: #ffffff;
+}
+
+#content_bg{
+	background: url(images/conbg.jpg) no-repeat left top;
+	padding-left:11px;
+}
+
+#left{
+	width: 716px;
+	padding: 7px;
+}
+
+.text{
+	padding: 15px;
+	background: url(images/textbg.jpg) no-repeat top left;
+	width: 700px;
+	min-height: 242px;
+}
+
+#left H1{
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight:normal;
+	color: #ffffff;
+	padding-bottom: 10px;
+}
+
+.read{
+	text-align:right;
+	padding-right:20px;
+}
+
+#right{
+	width: 256px;
+	float:right;
+	margin-right:5px;
+}
+
+#right ul 
+{
+	list-style: none;
+	padding-left:10px;
+	margin: 0px;
+	display:block;
+	padding-bottom: 50px;
+}
+
+#right ul li{
+	padding-bottom: 2px;
+}
+
+#archives ul li {
+	margin-bottom: 5px;
+	background:url(images/ls.png) no-repeat left;
+	padding-left: 15px;
+
+}
+
+#right h2 {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight:normal;
+	color: #ffffff;
+	text-align:center;
+	padding-top: 5px;
+	height: 63px;
+	background: url(images/title_right.jpg) no-repeat;
+}
+
+#right li a {
+	padding-left: 10px;
+	background: url(http://peachstateintertie.com/images/img09.gif) no-repeat 1px 5px;
+}
+
+#footer{
+	height: 37px;
+	width: 1014px;
+	font-size: 10px;
+	color: #ffffff;
+	padding-top: 4px;
+	text-align: center;
+	clear:both;
+}
+
+#footer a{
+	color: #ffffff;
+	font-size: 10px;
+	text-decoration: none;
+}
+.padding{
+	padding: 10px;
+	color:#FF0000;
+	font-weight: bold;
+}
+.RED {
+	color: #F00;
+}
