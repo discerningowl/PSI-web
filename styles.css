@@ -1,207 +1,384 @@
 /*
-Design by Metamorphosis Design
-http://www.metamorphozis.com
-Released for free under a Creative Commons Attribution 2.5 License
+   Peach State Intertie - Modern Stylesheet
+   Easy to customize - colors and spacing clearly labeled
+   Updated: 2026
 */
 
-a{
-	color: #025586;
-	text-decoration:none;
+/* ========================================
+   BASIC RESET & COLORS
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-a:hover{
-	text-decoration: underline;
-	color: #000000;
+:root {
+    /* Main colors - change these to update the whole site */
+    --primary-blue: #1e5a8e;
+    --light-blue: #73aad5;
+    --dark-gray: #333;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --red-accent: #e74c3c;
+    --green-accent: #27ae60;
+    --text-dark: #2c3e50;
 }
 
-*
-{
-	border: 0;
-	margin: 0;
+/* ========================================
+   BODY & MAIN LAYOUT
+   ======================================== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
 }
 
-body{
-	color: #000000;
-	background: #73aad5 url(images/bg_all.jpg) repeat-x top;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
+/* Container for entire site */
+.site-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
 }
 
-#maintop{
-	background: url(images/maintop.png) no-repeat top;
-	width:1003px;
-	padding-top:7px;
+/* ========================================
+   HEADER SECTION
+   ======================================== */
+header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-#main{
-	width: 1014px;
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-#mainbot{
-	background: url(images/mainbot.png) no-repeat;
-	width:1003px;
-	height: 7px;
+header h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.3rem;
 }
 
-#header{
-	width: 1014px;
-	height: 340px;
-	background: url(images/header.jpg) no-repeat top left;
+header .subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.95;
 }
 
-#logo{
-	padding-left: 40px;
-	text-align: left;
-	padding-top: 120px;
-	height: 180px;
+/* ========================================
+   NAVIGATION BAR
+   ======================================== */
+nav {
+    background: var(--dark-gray);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-#logo a {
-	text-decoration: none;
-	text-transform: lowercase;
-	font-style: italic;
-	font-size: 16px;
-	color: #FFFFFF;
-	font-weight: bold;
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
 }
 
-
-#logo H2 a{
-	font-size: 10px;
+nav li {
+    margin: 0;
 }
 
-#buttons{
-	width: 1014px;
-	height: 37px;
-	padding-left: 11px;
+nav a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
 }
 
-#buttons ul {
-    padding-left: 10px;
-    margin: 0px;
+nav a:hover,
+nav a.active {
+    background: var(--primary-blue);
+    border-bottom: 3px solid var(--light-blue);
 }
 
-#buttons li {
-	display: inline;		
+/* ========================================
+   MAIN CONTENT AREA
+   ======================================== */
+main {
+    padding: 2rem;
+    min-height: 500px;
 }
 
-#buttons a {
-	font-family: Tahoma, Arial, Helvetica, sans-serif;
-	font-size: 24px;
-	font-weight:normal;
-	display: block;
-	float: left;
-	width: 130px;
-	height: 27px;
-	background: url(images/menubg.png) no-repeat left center;
-	text-decoration: none;
-	color: #ffffff;
-	padding-top: 1px;
-	padding-left: 30px;
-	margin-right: 5px;
+/* Content sections */
+.content-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-#buttons a:hover {
-	text-decoration: underline;
+.content-section h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--light-blue);
 }
 
-#content{
-	width: 1003px;
-	background: #ffffff;
+.content-section h3 {
+    color: var(--dark-gray);
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
 }
 
-#content_bg{
-	background: url(images/conbg.jpg) no-repeat left top;
-	padding-left:11px;
+.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
 }
 
-#left{
-	width: 716px;
-	padding: 7px;
+/* Highlighted text boxes */
+.highlight-box {
+    background: var(--light-gray);
+    border-left: 4px solid var(--primary-blue);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
 }
 
-.text{
-	padding: 15px;
-	background: url(images/textbg.jpg) no-repeat top left;
-	width: 700px;
-	min-height: 242px;
+.highlight-box.important {
+    background: #fff3cd;
+    border-left-color: var(--red-accent);
 }
 
-#left H1{
-	font-family: Tahoma, Arial, Helvetica, sans-serif;
-	font-size:24px;
-	font-weight:normal;
-	color: #ffffff;
-	padding-bottom: 10px;
+/* ========================================
+   REPEATER STATUS LIST
+   ======================================== */
+.repeater-list {
+    list-style: none;
+    padding: 0;
 }
 
-.read{
-	text-align:right;
-	padding-right:20px;
+.repeater-item {
+    background: var(--light-gray);
+    margin: 0.75rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    border-left: 5px solid var(--primary-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
 }
 
-#right{
-	width: 256px;
-	float:right;
-	margin-right:5px;
+.repeater-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateX(5px);
 }
 
-#right ul 
-{
-	list-style: none;
-	padding-left:10px;
-	margin: 0px;
-	display:block;
-	padding-bottom: 50px;
+.repeater-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    flex: 1;
+    min-width: 200px;
 }
 
-#right ul li{
-	padding-bottom: 2px;
+.repeater-frequency {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    flex: 1;
+    min-width: 200px;
 }
 
-#archives ul li {
-	margin-bottom: 5px;
-	background:url(images/ls.png) no-repeat left;
-	padding-left: 15px;
-
+.status {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
 }
 
-#right h2 {
-	font-family: Tahoma, Arial, Helvetica, sans-serif;
-	font-size: 24px;
-	font-weight:normal;
-	color: #ffffff;
-	text-align:center;
-	padding-top: 5px;
-	height: 63px;
-	background: url(images/title_right.jpg) no-repeat;
+.status.online {
+    background: var(--green-accent);
+    color: var(--white);
 }
 
-#right li a {
-	padding-left: 10px;
-	background: url(http://peachstateintertie.com/images/img09.gif) no-repeat 1px 5px;
+.status.offline {
+    background: var(--red-accent);
+    color: var(--white);
 }
 
-#footer{
-	height: 37px;
-	width: 1014px;
-	font-size: 10px;
-	color: #ffffff;
-	padding-top: 4px;
-	text-align: center;
-	clear:both;
+.status.standby {
+    background: #f39c12;
+    color: var(--white);
 }
 
-#footer a{
-	color: #ffffff;
-	font-size: 10px;
-	text-decoration: none;
+/* ========================================
+   IMAGES & MEDIA
+   ======================================== */
+.image-gallery {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
 }
-.padding{
-	padding: 10px;
-	color:#FF0000;
-	font-weight: bold;
+
+.image-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-.RED {
-	color: #F00;
+
+/* ========================================
+   FOOTER
+   ======================================== */
+footer {
+    background: var(--dark-gray);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h3 {
+    color: var(--light-blue);
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+footer a {
+    color: var(--light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin: 1.5rem 0;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.text-center {
+    text-align: center;
+}
+
+.text-red {
+    color: var(--red-accent);
+}
+
+.text-green {
+    color: var(--green-accent);
+}
+
+.text-large {
+    font-size: 1.3rem;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.divider {
+    border: 0;
+    height: 2px;
+    background: var(--light-blue);
+    margin: 2rem 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN (Mobile Friendly)
+   ======================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header h2 {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 0.75rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .repeater-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .repeater-name,
+    .repeater-frequency {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
 }
