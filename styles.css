@@ -293,6 +293,31 @@ main {
     color: var(--white);
 }
 
+/* Link type badges with color coding */
+.linktype {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+}
+
+.linktype.fulltime {
+    background: var(--green-accent);
+    color: var(--white);
+}
+
+.linktype.parttime {
+    background: var(--yellow-accent);
+    color: var(--white);
+}
+
+.linktype.skywarn {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
 
 /* ============================================================================
    7. IMAGES & MEDIA

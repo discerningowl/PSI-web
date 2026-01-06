@@ -32,9 +32,23 @@ function getStatusDisplay(repeater) {
     return { class: repeater.status, text: statusText };
 }
 
+// Get link type class and text
+function getLinkTypeDisplay(repeater) {
+    const linkTypeLabels = {
+        'fulltime': 'Full-Time',
+        'parttime': 'Part-Time',
+        'skywarn': 'SKYWARN'
+    };
+    return {
+        class: repeater.linkType,
+        text: linkTypeLabels[repeater.linkType] || repeater.linkType
+    };
+}
+
 // Render simple list item (for index.html style)
 function renderSimpleListItem(repeater) {
     const status = getStatusDisplay(repeater);
+    const linkType = getLinkTypeDisplay(repeater);
     const location = repeater.locationShort || repeater.location;
 
     return `
@@ -42,6 +56,7 @@ function renderSimpleListItem(repeater) {
             <span class="repeater-name">${location}</span>
             <span class="repeater-frequency">${formatFrequency(repeater)}</span>
             <span class="status ${status.class}">${status.text}</span>
+            <span class="linktype ${linkType.class}">${linkType.text}</span>
         </li>
     `;
 }
@@ -49,6 +64,7 @@ function renderSimpleListItem(repeater) {
 // Render detailed list item (for repeaters.html style)
 function renderDetailedListItem(repeater) {
     const status = getStatusDisplay(repeater);
+    const linkType = getLinkTypeDisplay(repeater);
     const location = repeater.locationDetail ? `${repeater.location.split('(')[0].trim()} (${repeater.locationDetail})` : repeater.location;
 
     let detailsHTML = '<li style="margin-left: 20px; padding: 10px;';
@@ -95,6 +111,7 @@ function renderDetailedListItem(repeater) {
             <span class="repeater-name">${location}</span>
             <span class="repeater-frequency">${formatFrequencyWithCallsign(repeater)}</span>
             <span class="status ${status.class}">${status.text}</span>
+            <span class="linktype ${linkType.class}">${linkType.text}</span>
         </li>
         ${detailsHTML}
     `;
@@ -103,6 +120,7 @@ function renderDetailedListItem(repeater) {
 // Render table row for quick reference
 function renderTableRow(repeater, index) {
     const status = getStatusDisplay(repeater);
+    const linkType = getLinkTypeDisplay(repeater);
     const location = repeater.locationShort || repeater.location;
     const bgColor = index % 2 === 0 ? '' : ' style="background-color: #f9f9f9;"';
 
@@ -112,7 +130,7 @@ function renderTableRow(repeater, index) {
             <td style="padding: 8px; border: 1px solid #ddd;"><a href="#${repeater.id}" style="color: var(--primary-blue); text-decoration: none;">${location}</a></td>
             <td style="padding: 8px; border: 1px solid #ddd;">${repeater.tone}</td>
             <td style="padding: 8px; border: 1px solid #ddd;">${repeater.callsign || 'N/A'}</td>
-            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status ${status.class}">${status.text}</span></td>
+            <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status ${status.class}">${status.text}</span> <span class="linktype ${linkType.class}">${linkType.text}</span></td>
         </tr>
     `;
 }
@@ -148,10 +166,14 @@ function renderIndexRepeaters() {
 function renderRepeatersPage() {
     if (!repeatersData) return;
 
-    // Sort repeaters by frequency for the quick reference table
+    // Sort repeaters alphabetically by location for the quick reference table
     const sortedRepeaters = repeatersData.repeaters
         .filter(r => r.linkType !== 'skywarn')
-        .sort((a, b) => parseFloat(a.frequency) - parseFloat(b.frequency));
+        .sort((a, b) => {
+            const locA = (a.locationShort || a.location).toLowerCase();
+            const locB = (b.locationShort || b.location).toLowerCase();
+            return locA.localeCompare(locB);
+        });
 
     // Render quick reference table
     const tableBody = document.getElementById('quick-reference-table');
