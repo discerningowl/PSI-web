@@ -56,6 +56,7 @@ Each repeater object in the `repeaters` array can contain the following fields:
 | `toneText` | string | Override tone display text | `"No Tone"` |
 | `isHub` | boolean | Indicates if this is the system hub repeater | `true` |
 | `function` | string | Specific function (used for SKYWARN repeaters) | `"Primary link to NWS Peachtree City"` |
+| `repeaterbookUrl` | string | RepeaterBook.com reference URL (not displayed on site) | `"https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.275"` |
 
 ---
 
@@ -190,6 +191,18 @@ Each repeater object in the `repeaters` array can contain the following fields:
   - `"Backup link to NWS for redundancy"`
   - `"Alternate connection point for SKYWARN operations"`
 
+### `repeaterbookUrl` (Optional)
+- **Purpose:** Reference link to RepeaterBook.com for verifying repeater details and status
+- **Format:** Full URL to RepeaterBook search by frequency
+- **Usage:** Documentation and reference only - not displayed on website or used in JavaScript
+- **URL Format:** `https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq={frequency}`
+  - `state_id=13` is Georgia
+  - `freq={frequency}` is the repeater frequency
+- **Examples:**
+  - `"https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.275"`
+  - `"https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.240"`
+- **Why include this:** Provides quick reference for system administrators to verify repeater information and check current status on RepeaterBook
+
 ---
 
 ## Link Type Categories
@@ -236,7 +249,8 @@ Dedicated repeaters for SKYWARN severe weather operations. Currently 3 repeaters
   "coverage": "Wilkinson County and surrounding areas",
   "sponsor": "WB4NFG",
   "features": "System Hub Repeater - All intertie traffic is processed through this UHF hub. Emergency power generator with automatic transfer switch",
-  "isHub": true
+  "isHub": true,
+  "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.275"
 }
 ```
 
@@ -254,7 +268,8 @@ Dedicated repeaters for SKYWARN severe weather operations. Currently 3 repeaters
   "callsign": "W4SAN",
   "status": "online",
   "linkType": "fulltime",
-  "coverage": "Washington County and surrounding areas"
+  "coverage": "Washington County and surrounding areas",
+  "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=145.270"
 }
 ```
 
