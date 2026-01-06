@@ -1,0 +1,7 @@
+Contact: mailto:wb4nfg@peachstateintertie.com
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://peachstateintertie.com/.well-known/security.txt
+
+# Security Policy for Peach State Intertie Website
+# Please report any security vulnerabilities to the contact above

@@ -7,7 +7,25 @@ let repeatersData = null;
 async function loadRepeaterData() {
     try {
         const response = await fetch('repeaters.json');
+
+        // Validate response
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Ensure content type is JSON
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            throw new Error('Invalid content type - expected JSON');
+        }
+
         repeatersData = await response.json();
+
+        // Basic validation that the data has the expected structure
+        if (!repeatersData || !Array.isArray(repeatersData.repeaters)) {
+            throw new Error('Invalid data structure in repeaters.json');
+        }
+
         return repeatersData;
     } catch (error) {
         console.error('Error loading repeater data:', error);
