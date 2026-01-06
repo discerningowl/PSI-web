@@ -1,247 +1,378 @@
-# Peach State Intertie Website
+# Repeaters.json Data Schema Documentation
 
-**A modern, easy-to-maintain website for the Peach State Emergency Intertie System**
+## Overview
 
-Last Updated: January 2026
+`repeaters.json` is the single source of truth for all repeater information on the Peach State Intertie website. This file contains a complete database of all repeaters in the system, including full-time linked, part-time linked, and SKYWARN standby repeaters.
 
----
+**Location:** `/repeaters.json`
 
-## 📁 Website Files
-
-This website consists of simple HTML and CSS files:
-
-- `index.html` - Homepage
-- `repeaters.html` - Detailed repeater information
-- `nets.html` - Net schedules and information
-- `skywarn.html` - Skywarn information
-- `diagram.html` - Diagrams and maps
-- `blog.html` - Blog/news page
-- `styles.css` - The stylesheet that controls the look of ALL pages
-- `images/` - Folder containing all website images
+**Used by:**
+- `repeaters.js` - Dynamically renders repeater data on web pages
+- `index.html` - Displays simplified repeater lists
+- `repeaters.html` - Displays detailed repeater directory
 
 ---
 
-## 🎨 How to Change Colors
+## JSON Structure
 
-All website colors are defined at the **top of styles.css** (lines 16-25).
+The file contains a single root object with one property:
 
-To change a color, just edit the value after the colon:
-
-```css
-:root {
-    --primary-blue: #1e5a8e;     /* Main blue color */
-    --light-blue: #73aad5;       /* Light blue accents */
-    --dark-gray: #333;           /* Dark gray for text */
-    --red-accent: #e74c3c;       /* Red for OFFLINE status */
-    --green-accent: #27ae60;     /* Green for ONLINE status */
+```json
+{
+  "repeaters": [ /* array of repeater objects */ ]
 }
 ```
 
-**Example:** To make the main blue darker, change `#1e5a8e` to `#0d2f4a`
+---
+
+## Repeater Object Schema
+
+Each repeater object in the `repeaters` array can contain the following fields:
+
+### Required Fields
+
+| Field | Type | Description | Example |
+|-------|------|-------------|---------|
+| `id` | string | Unique identifier for the repeater (kebab-case) | `"repeater-irwinton-hub"` |
+| `location` | string | Primary location name displayed to users | `"Irwinton (HUB)"` |
+| `frequency` | string | Repeater output frequency in MHz | `"443.275"` |
+| `offset` | string | Transmit offset direction | `"+"` or `"-"` |
+| `tone` | string | CTCSS/PL tone in Hz | `"77.0"` |
+| `callsign` | string | FCC callsign of the repeater | `"K4DBN"` |
+| `status` | string | Current operational status | `"online"`, `"offline"`, or `"standby"` |
+| `linkType` | string | Type of intertie connection | `"fulltime"`, `"parttime"`, or `"skywarn"` |
+
+### Optional Fields
+
+| Field | Type | Description | Example |
+|-------|------|-------------|---------|
+| `locationDetail` | string | Additional location information | `"Byron Fire Dept"` |
+| `locationShort` | string | Abbreviated location for compact displays | `"Warner Robins (HMC)"` |
+| `coverage` | string | Geographic coverage description | `"Wilkinson County and surrounding areas"` |
+| `sponsor` | string | Repeater sponsor/owner information | `"WB4NFG"` |
+| `club` | string | Associated amateur radio club | `"Central Georgia Amateur Radio Club"` |
+| `features` | string | Special features or notes | `"AllStarLink Node 48166"` |
+| `statusText` | string | Custom status message | `"Online Soon"` |
+| `toneText` | string | Override tone display text | `"No Tone"` |
+| `isHub` | boolean | Indicates if this is the system hub repeater | `true` |
+| `function` | string | Specific function (used for SKYWARN repeaters) | `"Primary link to NWS Peachtree City"` |
+| `repeaterbookUrl` | string | RepeaterBook.com reference URL (not displayed on site) | `"https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.275"` |
 
 ---
 
-## ✏️ How to Update Content
+## Field Details
 
-### Changing Text on a Page
+### `id` (Required)
+- **Purpose:** Unique identifier for database lookups and DOM element IDs
+- **Format:** Lowercase with hyphens (kebab-case)
+- **Naming Convention:**
+  - Regular repeaters: `repeater-{location}`
+  - SKYWARN repeaters: `skywarn-{location}`
+- **Examples:**
+  - `"repeater-irwinton-hub"`
+  - `"repeater-macon"`
+  - `"skywarn-fayetteville"`
 
-1. Open the HTML file (like `index.html`) in a text editor
-2. Find the text you want to change
-3. Edit it between the `>` and `<` symbols
-4. Save the file
+### `location` (Required)
+- **Purpose:** Primary display name shown on website
+- **Format:** Proper case with optional parenthetical notes
+- **Examples:**
+  - `"Irwinton (HUB)"`
+  - `"Macon"`
+  - `"Warner Robins (Houston Medical Center)"`
 
-**Example:**
-```html
-<p>This is some text</p>
-```
-Change "This is some text" to whatever you want.
+### `locationDetail` (Optional)
+- **Purpose:** Additional location context not needed in all views
+- **When to use:** For specific building/site information
+- **Example:** `"Byron Fire Dept"`
 
-### Adding a New Repeater to the Homepage
+### `locationShort` (Optional)
+- **Purpose:** Abbreviated form for space-constrained displays
+- **When to use:** When full location name is too long
+- **Example:** `"Warner Robins (HMC)"` instead of `"Warner Robins (Houston Medical Center)"`
 
-Find this section in `index.html`:
+### `frequency` (Required)
+- **Purpose:** Repeater output frequency
+- **Format:** String in MHz with appropriate decimal places
+- **Examples:**
+  - `"443.275"` (UHF)
+  - `"147.240"` (VHF)
+  - `"145.210"` (VHF)
 
-```html
-<li class="repeater-item">
-    <span class="repeater-name">Irwinton</span>
-    <span class="repeater-frequency">147.24+ (77.0 Tone)</span>
-    <span class="status online">Online</span>
-</li>
-```
+### `offset` (Required)
+- **Purpose:** Transmit frequency offset direction
+- **Valid Values:**
+  - `"+"` - Transmit above repeater frequency
+  - `"-"` - Transmit below repeater frequency
+- **Standard Offsets:**
+  - VHF (2m): ±600 kHz
+  - UHF (70cm): ±5 MHz
 
-Copy and paste it, then change:
-- `Irwinton` to the new repeater name
-- `147.24+ (77.0 Tone)` to the new frequency
-- `online` to `offline` or `standby` to change the status color
+### `tone` (Required)
+- **Purpose:** CTCSS (PL) access tone in Hz
+- **Format:** String with one decimal place
+- **Examples:**
+  - `"77.0"`
+  - `"88.5"`
+  - `"123.0"`
+  - `"131.8"`
 
-### Changing a Repeater Status
+### `toneText` (Optional)
+- **Purpose:** Override tone display for special cases
+- **When to use:** When repeater doesn't use standard tone
+- **Example:** `"No Tone"`
 
-Find the repeater in the HTML file and change the status:
+### `callsign` (Required)
+- **Purpose:** FCC-assigned station callsign
+- **Format:** Standard amateur radio callsign format
+- **Examples:**
+  - `"K4DBN"`
+  - `"WB4NFG"`
+  - `"WX4EMA"`
 
-```html
-<span class="status online">Online</span>    <!-- Green -->
-<span class="status offline">Offline</span>  <!-- Red -->
-<span class="status standby">Standby</span>  <!-- Orange -->
+### `status` (Required)
+- **Purpose:** Current operational status
+- **Valid Values:**
+  - `"online"` - Repeater is operational
+  - `"offline"` - Repeater is not operational
+  - `"standby"` - Repeater is on standby (typically SKYWARN)
+- **Display:** Renders as colored status indicator on website
+
+### `statusText` (Optional)
+- **Purpose:** Custom status message
+- **When to use:** To provide additional status context
+- **Example:** `"Online Soon"` for repeaters coming online
+
+### `linkType` (Required)
+- **Purpose:** Categorizes how repeater connects to intertie
+- **Valid Values:**
+  - `"fulltime"` - Permanently linked to the intertie
+  - `"parttime"` - Automatically linked during events or linked on command
+  - `"skywarn"` - Standby repeater for SKYWARN operations
+- **Impact:** Determines which section of the website displays the repeater
+
+### `coverage` (Optional)
+- **Purpose:** Describes geographic coverage area
+- **Format:** Free text description
+- **Example:** `"Wilkinson County and surrounding areas"`
+- **Display:** Shown in detailed view on repeaters.html
+
+### `sponsor` (Optional)
+- **Purpose:** Lists repeater sponsor(s) or owner(s)
+- **Format:** Callsign(s) or organization name
+- **Examples:**
+  - `"WB4NFG"`
+  - `"KD4UTQ and WB4NFG"`
+  - `"WX4EMA (Macon/Bibb Emergency Management Agency)"`
+
+### `club` (Optional)
+- **Purpose:** Associated amateur radio club
+- **Example:** `"Central Georgia Amateur Radio Club"`
+
+### `features` (Optional)
+- **Purpose:** Special capabilities, notes, or historical information
+- **Format:** Free text, can be multiple sentences
+- **Examples:**
+  - `"AllStarLink Node 48166"`
+  - `"Emergency power generator with automatic transfer switch"`
+  - `"Historic Repeater - One of the oldest repeaters in Georgia"`
+
+### `isHub` (Optional)
+- **Purpose:** Flags the central hub repeater
+- **Type:** Boolean
+- **When to use:** Only for the main system hub
+- **Example:** `true` (only on Irwinton 443.275+ repeater)
+
+### `function` (Optional)
+- **Purpose:** Describes specific role or function
+- **When to use:** Primarily for SKYWARN repeaters
+- **Examples:**
+  - `"Primary link to NWS Peachtree City for SKYWARN operations"`
+  - `"Backup link to NWS for redundancy"`
+  - `"Alternate connection point for SKYWARN operations"`
+
+### `repeaterbookUrl` (Optional)
+- **Purpose:** Reference link to RepeaterBook.com for verifying repeater details and status
+- **Format:** Full URL to RepeaterBook search by frequency
+- **Usage:** Documentation and reference only - not displayed on website or used in JavaScript
+- **URL Format:** `https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq={frequency}`
+  - `state_id=13` is Georgia
+  - `freq={frequency}` is the repeater frequency
+- **Examples:**
+  - `"https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.275"`
+  - `"https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.240"`
+- **Why include this:** Provides quick reference for system administrators to verify repeater information and check current status on RepeaterBook
+
+---
+
+## Link Type Categories
+
+### Full-Time Linked (`"fulltime"`)
+Repeaters permanently connected to the Peach State Intertie network. Currently 12 repeaters in this category.
+
+**Characteristics:**
+- Always linked to the system hub (Irwinton 443.275+)
+- Provide continuous wide-area coverage
+- Appear in "Full Time Linked Repeaters" section
+
+### Part-Time Linked (`"parttime"`)
+Repeaters that connect automatically during events or can be linked on command. Currently 6 repeaters in this category.
+
+**Characteristics:**
+- Link during specific events (SKYWARN activations, nets, emergencies)
+- Can be linked on command by authorized operators
+- Appear in "Automatic Linked or Linked On Command" section
+
+### SKYWARN Standby (`"skywarn"`)
+Dedicated repeaters for SKYWARN severe weather operations. Currently 3 repeaters in this category.
+
+**Characteristics:**
+- On standby for severe weather activation
+- Connect to National Weather Service Peachtree City
+- Located at Irwinton Hub Site
+- Appear in "Georgia SKYWARN Weather Link Repeaters" section
+
+---
+
+## Complete Example
+
+```json
+{
+  "id": "repeater-irwinton-hub",
+  "location": "Irwinton (HUB)",
+  "frequency": "443.275",
+  "offset": "+",
+  "tone": "77.0",
+  "callsign": "K4DBN",
+  "status": "online",
+  "linkType": "fulltime",
+  "coverage": "Wilkinson County and surrounding areas",
+  "sponsor": "WB4NFG",
+  "features": "System Hub Repeater - All intertie traffic is processed through this UHF hub. Emergency power generator with automatic transfer switch",
+  "isHub": true,
+  "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.275"
+}
 ```
 
 ---
 
-## 🖼️ How to Add/Change Images
+## Minimal Example
 
-1. Put your image file in the `images/` folder
-2. In the HTML file, add or change:
-
-```html
-<img src="images/your-image.jpg" alt="Description of image">
-```
-
-Replace `your-image.jpg` with your filename.
-
----
-
-## 📱 Mobile Friendly
-
-This website automatically adjusts for phones and tablets. No extra work needed!
-
----
-
-## 🔍 Website Structure Explained
-
-### Every Page Has 3 Main Parts:
-
-1. **Header** - The blue top section with the title
-2. **Navigation** - The dark menu bar with links
-3. **Footer** - The bottom section with contact info
-
-### Content Sections
-
-Content is organized in boxes called "content-section":
-
-```html
-<div class="content-section">
-    <h2>Title Here</h2>
-    <p>Text here</p>
-</div>
-```
-
-To add a new section, copy and paste this block!
-
----
-
-## 💡 Common Tasks
-
-### Task: Update the "Last Updated" Date
-
-1. Open `index.html` (and other pages)
-2. Find this near the bottom:
-
-```html
-<p>Established 2008 | Webpage Updated January 2026</p>
-```
-
-3. Change the date
-
-### Task: Add a New External Link to Footer
-
-Find this section in any HTML file:
-
-```html
-<a href="https://www.gaares.org" target="_blank">GA ARES</a> |
-```
-
-Copy it and change:
-- The URL in `href=""`
-- The text between `>` and `</a>`
-
-### Task: Change Contact Email
-
-Find this in any HTML file:
-
-```html
-<p><strong>K4DBN@PEACHSTATEINTERTIE.COM</strong> - Intertie Manager</p>
-```
-
-Change the email address.
-
----
-
-## 🎨 CSS Classes You Can Use
-
-Add these classes to any element to style it:
-
-- `text-center` - Center the text
-- `text-red` - Make text red
-- `text-green` - Make text green
-- `text-large` - Make text larger
-- `bold` - Make text bold
-
-**Example:**
-```html
-<p class="text-center bold text-red">Important Message!</p>
+```json
+{
+  "id": "repeater-sandersville",
+  "location": "Sandersville",
+  "frequency": "145.270",
+  "offset": "-",
+  "tone": "77.0",
+  "callsign": "W4SAN",
+  "status": "online",
+  "linkType": "fulltime",
+  "coverage": "Washington County and surrounding areas",
+  "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=145.270"
+}
 ```
 
 ---
 
-## 📦 Highlight Boxes
+## How Data is Used
 
-To make something stand out, wrap it in a highlight box:
+### On index.html
+- Displays simplified list view
+- Shows: location, frequency, offset, tone, callsign, status
+- Grouped by linkType: fulltime, parttime, skywarn
+- Rendered by `renderSimpleListItem()` function in repeaters.js
 
-```html
-<div class="highlight-box">
-    <p>This text will appear in a gray box with a blue border</p>
-</div>
+### On repeaters.html
+- Displays comprehensive detailed view
+- **Quick Reference Table:** frequency, location, tone, callsign, status
+- **Detailed Lists:** All available fields including coverage, sponsor, features
+- Grouped by linkType with full descriptions
+- Rendered by `renderTableRow()` and `renderDetailedListItem()` functions
+
+---
+
+## Adding a New Repeater
+
+To add a new repeater to the system:
+
+1. **Determine required information:**
+   - Frequency, offset, tone
+   - Location and callsign
+   - Current operational status
+   - Link type (fulltime/parttime/skywarn)
+
+2. **Create unique ID:**
+   - Format: `repeater-{location}` or `skywarn-{location}`
+   - Use lowercase with hyphens
+
+3. **Add to appropriate position in array:**
+   - Place with other repeaters of the same linkType
+   - Maintain logical geographic or frequency order
+
+4. **Include optional fields as available:**
+   - Coverage area
+   - Sponsor information
+   - Special features
+   - Club affiliation
+
+5. **Validate JSON syntax:**
+   - Ensure proper comma placement
+   - Verify all quotes are matched
+   - Test that the file parses correctly
+
+---
+
+## Editing Existing Repeaters
+
+### Updating Status
+To mark a repeater offline or back online:
+```json
+"status": "offline"  // or "online" or "standby"
 ```
 
-For important warnings:
-```html
-<div class="highlight-box important">
-    <p>This appears in a yellow box - great for warnings!</p>
-</div>
+Optionally add status message:
+```json
+"statusText": "Temporary maintenance - back online soon"
+```
+
+### Changing Link Type
+To change how a repeater connects:
+```json
+"linkType": "parttime"  // was "fulltime"
+```
+
+### Adding Features
+To document new capabilities:
+```json
+"features": "AllStarLink Node 48166, IRLP Node 1234"
 ```
 
 ---
 
-## 🆘 Help & Tips
+## Data Integrity Guidelines
 
-### Tip 1: Always make a backup
-Before making changes, copy the file and name it something like `index-backup.html`
+1. **Always maintain valid JSON syntax**
+   - Use a JSON validator before committing changes
+   - Watch for missing/extra commas
 
-### Tip 2: Test your changes
-Open the HTML file in a web browser to see how it looks before publishing
+2. **Keep IDs unique**
+   - Never duplicate an `id` value
+   - IDs should remain stable (don't change once created)
 
-### Tip 3: Keep it consistent
-If you change contact info on one page, change it on all pages
+3. **Use consistent formatting**
+   - Frequencies: Include appropriate decimal places
+   - Tones: Always one decimal place (e.g., "77.0" not "77")
+   - Callsigns: Uppercase
 
-### Tip 4: Comments are your friend
-Lines starting with `<!--` are comments (notes to yourself). They don't show on the website:
+4. **Validate after changes**
+   - Test both index.html and repeaters.html after editing
+   - Verify all repeaters display correctly
 
-```html
-<!-- This is a reminder note that only you can see -->
-```
-
----
-
-## 📞 Need Help?
-
-The website uses:
-- **HTML5** - The latest version of HTML (very simple)
-- **CSS3** - Modern styling (all in styles.css)
-- **No JavaScript** - Keeps it simple!
-
-Everything is well-commented. Look for lines starting with `<!--` in HTML files or `/*` in the CSS file.
+5. **Required fields must always be present**
+   - Never omit: id, location, frequency, offset, tone, callsign, status, linkType
 
 ---
 
-## ✅ Checklist for Making Changes
-
-- [ ] Open the file in a text editor
-- [ ] Make your changes
-- [ ] Save the file
-- [ ] Open it in a web browser to check
-- [ ] If it looks good, upload to your web server
-- [ ] Check the live website
-
----
-
-**Remember:** You can't break anything! If something goes wrong, just restore from your backup copy.
-
-Good luck! 🎉
+*Last updated: January 2026*
+*Schema version: 1.0*
