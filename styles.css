@@ -1,12 +1,39 @@
 /*
-   Peach State Intertie - Modern Stylesheet
-   Easy to customize - colors and spacing clearly labeled
-   Updated: 2026
+   ============================================================================
+   PEACH STATE INTERTIE - COMPREHENSIVE STYLESHEET
+   ============================================================================
+
+   This stylesheet controls ALL visual styling for the Peach State Intertie
+   website. All CSS is consolidated here for easy maintenance.
+
+   Last Updated: January 2026
+
+   TABLE OF CONTENTS:
+   1. CSS Variables & Reset
+   2. Body & Main Layout
+   3. Header Section
+   4. Navigation Bar
+   5. Main Content Area
+   6. Repeater Lists & Status Indicators
+   7. Images & Media
+   8. Tables
+   9. Footer
+   10. 404 Error Page
+   11. Utility Classes
+   12. Responsive Design (Mobile)
+   ============================================================================
 */
 
-/* ========================================
-   BASIC RESET & COLORS
-   ======================================== */
+
+/* ============================================================================
+   1. CSS VARIABLES & RESET
+   ============================================================================
+
+   CSS Custom Properties (variables) define the color scheme and can be
+   changed in one place to update the entire site. The reset removes default
+   browser styling for consistent appearance across all browsers.
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -14,29 +41,37 @@
 }
 
 :root {
-    /* Main colors - change these to update the whole site */
-    --primary-blue: #1e5a8e;
-    --light-blue: #73aad5;
-    --dark-gray: #333;
-    --light-gray: #f5f5f5;
-    --white: #ffffff;
-    --red-accent: #e74c3c;
-    --green-accent: #27ae60;
-    --text-dark: #2c3e50;
+    /* Primary color palette - Change these to update site colors globally */
+    --primary-blue: #1e5a8e;      /* Main brand color */
+    --light-blue: #73aad5;         /* Accents and hover states */
+    --dark-gray: #333;             /* Text and dark backgrounds */
+    --light-gray: #f5f5f5;         /* Light backgrounds */
+    --white: #ffffff;              /* White backgrounds */
+    --red-accent: #e74c3c;         /* Error/offline status */
+    --green-accent: #27ae60;       /* Success/online status */
+    --yellow-accent: #f39c12;      /* Warning/standby status */
+    --text-dark: #2c3e50;          /* Body text color */
 }
 
-/* ========================================
-   BODY & MAIN LAYOUT
-   ======================================== */
+
+/* ============================================================================
+   2. BODY & MAIN LAYOUT
+   ============================================================================
+
+   Sets up the overall page structure with a gradient background and
+   centered white container for content.
+*/
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
+    /* Purple gradient background that stays fixed while scrolling */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-attachment: fixed;
 }
 
-/* Container for entire site */
+/* Main container - centers content and adds shadow for card effect */
 .site-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -44,9 +79,15 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,0.3);
 }
 
-/* ========================================
-   HEADER SECTION
-   ======================================== */
+
+/* ============================================================================
+   3. HEADER SECTION
+   ============================================================================
+
+   The top banner with site title and subtitle. Uses gradient background
+   matching the site's blue color scheme.
+*/
+
 header {
     background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
     color: var(--white);
@@ -74,21 +115,27 @@ header .subtitle {
     opacity: 0.95;
 }
 
-/* ========================================
-   NAVIGATION BAR
-   ======================================== */
+
+/* ============================================================================
+   4. NAVIGATION BAR
+   ============================================================================
+
+   Sticky navigation that stays at top of screen when scrolling. Uses flexbox
+   for responsive layout. Active page is highlighted with bottom border.
+*/
+
 nav {
     background: var(--dark-gray);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: sticky;
+    position: sticky;            /* Stays at top when scrolling */
     top: 0;
-    z-index: 100;
+    z-index: 100;                /* Ensures nav stays above other content */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;             /* Wraps to multiple lines on small screens */
     justify-content: center;
     padding: 0;
 }
@@ -108,21 +155,28 @@ nav a {
     border-bottom: 3px solid transparent;
 }
 
+/* Hover effect and active page indicator */
 nav a:hover,
 nav a.active {
     background: var(--primary-blue);
     border-bottom: 3px solid var(--light-blue);
 }
 
-/* ========================================
-   MAIN CONTENT AREA
-   ======================================== */
+
+/* ============================================================================
+   5. MAIN CONTENT AREA
+   ============================================================================
+
+   Content sections provide consistent spacing and styling for all page
+   content. Includes heading styles, paragraphs, and highlighted boxes.
+*/
+
 main {
     padding: 2rem;
-    min-height: 500px;
+    min-height: 500px;           /* Ensures footer stays at bottom */
 }
 
-/* Content sections */
+/* Content section cards with subtle shadow */
 .content-section {
     margin-bottom: 2rem;
     padding: 1.5rem;
@@ -151,7 +205,7 @@ main {
     line-height: 1.8;
 }
 
-/* Highlighted text boxes */
+/* Highlighted information boxes */
 .highlight-box {
     background: var(--light-gray);
     border-left: 4px solid var(--primary-blue);
@@ -160,14 +214,21 @@ main {
     border-radius: 4px;
 }
 
+/* Yellow highlight for important notices */
 .highlight-box.important {
     background: #fff3cd;
     border-left-color: var(--red-accent);
 }
 
-/* ========================================
-   REPEATER STATUS LIST
-   ======================================== */
+
+/* ============================================================================
+   6. REPEATER LISTS & STATUS INDICATORS
+   ============================================================================
+
+   Specialized styling for repeater information displays. Includes list items
+   with hover effects and color-coded status badges.
+*/
+
 .repeater-list {
     list-style: none;
     padding: 0;
@@ -186,6 +247,7 @@ main {
     transition: all 0.3s ease;
 }
 
+/* Hover effect - subtle lift and shadow */
 .repeater-item:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transform: translateX(5px);
@@ -200,13 +262,14 @@ main {
 }
 
 .repeater-frequency {
-    font-family: 'Courier New', monospace;
+    font-family: 'Courier New', monospace;  /* Monospace for technical data */
     font-size: 1.1rem;
     color: var(--primary-blue);
     flex: 1;
     min-width: 200px;
 }
 
+/* Status badges with color coding */
 .status {
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -226,13 +289,19 @@ main {
 }
 
 .status.standby {
-    background: #f39c12;
+    background: var(--yellow-accent);
     color: var(--white);
 }
 
-/* ========================================
-   IMAGES & MEDIA
-   ======================================== */
+
+/* ============================================================================
+   7. IMAGES & MEDIA
+   ============================================================================
+
+   Responsive image handling with flex gallery layout. All images scale
+   appropriately and have consistent styling.
+*/
+
 .image-gallery {
     display: flex;
     gap: 1rem;
@@ -248,9 +317,93 @@ main {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* ========================================
-   FOOTER
-   ======================================== */
+/* Size classes for images */
+.img-small {
+    max-width: 200px;
+}
+
+.img-medium {
+    max-width: 400px;
+}
+
+.img-large {
+    max-width: 600px;
+}
+
+.img-full {
+    max-width: 100%;
+}
+
+
+/* ============================================================================
+   8. TABLES
+   ============================================================================
+
+   Styling for data tables including the quick reference repeater table.
+   Includes alternating row colors and hover effects.
+*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table thead tr {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+table th {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-weight: 600;
+}
+
+table th.center {
+    text-align: center;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+table td.center {
+    text-align: center;
+}
+
+/* Alternating row colors for readability */
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on table rows */
+table tbody tr:hover {
+    background-color: #f0f8ff;
+}
+
+/* Container for horizontal scrolling on small screens */
+.table-container {
+    overflow-x: auto;
+}
+
+/* List styles for content within lists */
+.list-indented {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+
+/* ============================================================================
+   9. FOOTER
+   ============================================================================
+
+   Site footer with dark background containing contact info, external links,
+   and copyright information.
+*/
+
 footer {
     background: var(--dark-gray);
     color: var(--white);
@@ -302,13 +455,117 @@ footer a:hover {
     margin-top: 1rem;
 }
 
-/* ========================================
-   UTILITY CLASSES
-   ======================================== */
+
+/* ============================================================================
+   10. 404 ERROR PAGE
+   ============================================================================
+
+   Special styling for the custom 404 error page with animated peach emoji
+   and ham radio themed error messages.
+*/
+
+.error-container {
+    text-align: center;
+    padding: 4rem 2rem;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Large animated peach emoji */
+.peach {
+    font-size: 12rem;
+    line-height: 1;
+    animation: float 3s ease-in-out infinite;
+    margin: 2rem 0;
+}
+
+/* Floating animation for peach */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.error-code {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin: 1rem 0;
+}
+
+.error-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 1rem auto;
+}
+
+.home-button {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: var(--light-blue);
+}
+
+.quick-links {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+.quick-links a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.quick-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================================================================
+   11. UTILITY CLASSES
+   ============================================================================
+
+   Reusable helper classes for common styling needs throughout the site.
+   These provide quick ways to add text alignment, colors, sizing, etc.
+*/
+
+/* Text alignment */
 .text-center {
     text-align: center;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Text colors */
 .text-red {
     color: var(--red-accent);
 }
@@ -317,14 +574,50 @@ footer a:hover {
     color: var(--green-accent);
 }
 
+.text-blue {
+    color: var(--primary-blue);
+}
+
+/* Text sizing */
+.text-small {
+    font-size: 0.9rem;
+}
+
 .text-large {
     font-size: 1.3rem;
 }
 
+.text-xlarge {
+    font-size: 1.6rem;
+}
+
+/* Text weight */
 .bold {
     font-weight: 700;
 }
 
+.normal {
+    font-weight: 400;
+}
+
+.light {
+    font-weight: 300;
+}
+
+/* Spacing utilities */
+.margin-top {
+    margin-top: 1rem;
+}
+
+.margin-bottom {
+    margin-bottom: 1rem;
+}
+
+.padding {
+    padding: 1rem;
+}
+
+/* Visual divider */
 .divider {
     border: 0;
     height: 2px;
@@ -332,9 +625,17 @@ footer a:hover {
     margin: 2rem 0;
 }
 
-/* ========================================
-   RESPONSIVE DESIGN (Mobile Friendly)
-   ======================================== */
+
+/* ============================================================================
+   12. RESPONSIVE DESIGN (MOBILE)
+   ============================================================================
+
+   Media queries adjust layout and sizing for tablets and mobile devices.
+   Breakpoints at 768px (tablet) and 480px (phone) ensure good UX on all
+   screen sizes.
+*/
+
+/* Tablet and small desktop adjustments */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
@@ -344,6 +645,7 @@ footer a:hover {
         font-size: 1.3rem;
     }
 
+    /* Stack navigation vertically on tablets */
     nav ul {
         flex-direction: column;
     }
@@ -362,6 +664,7 @@ footer a:hover {
         padding: 1rem;
     }
 
+    /* Stack repeater info vertically */
     .repeater-item {
         flex-direction: column;
         align-items: flex-start;
@@ -371,8 +674,22 @@ footer a:hover {
     .repeater-frequency {
         margin-bottom: 0.5rem;
     }
+
+    /* Adjust 404 page for tablets */
+    .peach {
+        font-size: 8rem;
+    }
+
+    .error-code {
+        font-size: 2rem;
+    }
+
+    .error-message {
+        font-size: 1.2rem;
+    }
 }
 
+/* Mobile phone adjustments */
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.5rem;
@@ -381,12 +698,26 @@ footer a:hover {
     .content-section h2 {
         font-size: 1.5rem;
     }
+
+    /* Further reduce 404 page sizing */
+    .peach {
+        font-size: 6rem;
+    }
+
+    .error-code {
+        font-size: 1.5rem;
+    }
 }
 
-/* ========================================
+
+/* ============================================================================
    ANCHOR LINK SCROLL OFFSET
-   ======================================== */
-/* Offset anchor links to account for sticky navigation */
+   ============================================================================
+
+   Adjusts scroll position for anchor links to account for sticky navigation,
+   preventing content from being hidden behind the nav bar.
+*/
+
 [id^="repeater-"] {
     scroll-margin-top: 80px;
 }
