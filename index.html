@@ -12,6 +12,9 @@
 
     <!-- Include loader script -->
     <script src="includes.js"></script>
+
+    <!-- Repeater data renderer -->
+    <script src="repeaters.js"></script>
 </head>
 <body>
     <!-- Main Container for Entire Website -->
@@ -76,112 +79,20 @@
                 <h2>Intertie Repeaters and Echo Link Nodes</h2>
 
                 <h3>Full Time Linked Repeaters</h3>
-                <ul class="repeater-list">
-                    <li class="repeater-item">
-                        <span class="repeater-name">Irwinton</span>
-                        <span class="repeater-frequency">147.24+ (77.0 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Irwinton</span>
-                        <span class="repeater-frequency">443.275+ (77.0 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Macon</span>
-                        <span class="repeater-frequency">146.895- (88.5 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Cedargrove</span>
-                        <span class="repeater-frequency">147.150+ (123.0 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Eastman</span>
-                        <span class="repeater-frequency">145.210- (103.5 Tone)</span>
-                        <span class="status offline">Offline</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Montezuma</span>
-                        <span class="repeater-frequency">146.640- (97.4 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Bolingbroke/Forsyth</span>
-                        <span class="repeater-frequency">146.835- (77.0 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Peach County</span>
-                        <span class="repeater-frequency">145.290- (82.5 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Taylor County</span>
-                        <span class="repeater-frequency">444.950+ (107.2 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Milledgeville</span>
-                        <span class="repeater-frequency">147.135+ (123.0 Tone)</span>
-                        <span class="status standby">Online Soon</span>
-                    </li>
+                <ul class="repeater-list" id="fulltime-repeaters-list">
+                    <!-- Repeaters loaded dynamically from repeaters.json -->
                 </ul>
 
                 <h3>Automatic Linked or Linked On Command Repeaters (Part Time Linked)</h3>
-                <ul class="repeater-list">
-                    <li class="repeater-item">
-                        <span class="repeater-name">Warner Robins</span>
-                        <span class="repeater-frequency">146.850- (No Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Warner Robins (Houston Medical Center)</span>
-                        <span class="repeater-frequency">146.670- (82.5 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Warner Robins (Houston Medical Center)</span>
-                        <span class="repeater-frequency">443.150+ (82.5 Tone) - AllStarLink Node 48166</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Macon (Macon/Bibb EMA)</span>
-                        <span class="repeater-frequency">147.015+ (88.5 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Macon (Macon/Bibb EMA)</span>
-                        <span class="repeater-frequency">443.075+ (88.5 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
-                    <li class="repeater-item">
-                        <span class="repeater-name">Thomaston</span>
-                        <span class="repeater-frequency">147.390+ (131.8 Tone)</span>
-                        <span class="status online">Online</span>
-                    </li>
+                <ul class="repeater-list" id="parttime-repeaters-list">
+                    <!-- Repeaters loaded dynamically from repeaters.json -->
                 </ul>
 
                 <h3>Standby Mode</h3>
                 <div class="highlight-box">
                     <p><strong>Monroe County Link To Hub Repeater For Georgia SKYWARN Net From Peachtree City National Weather Service</strong></p>
-                    <ul class="repeater-list">
-                        <li class="repeater-item">
-                            <span class="repeater-name">Fayetteville (Primary)</span>
-                            <span class="repeater-frequency">444.600+ (77.0 Tone)</span>
-                            <span class="status standby">Standby</span>
-                        </li>
-                        <li class="repeater-item">
-                            <span class="repeater-name">Tyrone (Back-up)</span>
-                            <span class="repeater-frequency">444.675+ (77.0 Tone)</span>
-                            <span class="status standby">Standby</span>
-                        </li>
-                        <li class="repeater-item">
-                            <span class="repeater-name">Thomaston (Alternate Remote Base)</span>
-                            <span class="repeater-frequency">147.390- (131.8 Tone)</span>
-                            <span class="status standby">Standby</span>
-                        </li>
+                    <ul class="repeater-list" id="skywarn-repeaters-list">
+                        <!-- Repeaters loaded dynamically from repeaters.json -->
                     </ul>
                 </div>
             </div>
