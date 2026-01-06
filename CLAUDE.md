@@ -16,7 +16,7 @@ This is a static HTML website that uses a simple JavaScript include system for h
 - **Stylesheet**: styles.css (controls ALL styling)
 - **JavaScript**: includes.js (loads header and footer dynamically)
 - **Templates**: header.html and footer.html (loaded dynamically via JavaScript)
-- **Images**: images/ directory + PSInew.jpg
+- **Images**: images/ directory (includes PSInew.jpg)
 - **Deployment**: .github/workflows/deploy.yml (GitHub Actions for auto-deployment to GitHub Pages)
 
 ## Header and Footer Management
