@@ -12,7 +12,8 @@
       "coverage": "Wilkinson County and surrounding areas",
       "sponsor": "WB4NFG",
       "features": "System Hub Repeater - All intertie traffic is processed through this UHF hub. Emergency power generator with automatic transfer switch",
-      "isHub": true
+      "isHub": true,
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.275"
     },
     {
       "id": "repeater-irwinton-vhf",
@@ -24,7 +25,8 @@
       "status": "online",
       "linkType": "fulltime",
       "coverage": "Wilkinson County and surrounding areas",
-      "sponsor": "WB4NFG"
+      "sponsor": "WB4NFG",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.240"
     },
     {
       "id": "repeater-macon",
@@ -36,7 +38,8 @@
       "status": "online",
       "linkType": "fulltime",
       "coverage": "Bibb County and surrounding areas",
-      "sponsor": "KD4UTQ and WB4NFG"
+      "sponsor": "KD4UTQ and WB4NFG",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=146.895"
     },
     {
       "id": "repeater-cedar-grove",
@@ -48,7 +51,8 @@
       "status": "online",
       "linkType": "fulltime",
       "coverage": "Laurens County and surrounding areas",
-      "sponsor": "WA4FRI"
+      "sponsor": "WA4FRI",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.150"
     },
     {
       "id": "repeater-eastman",
@@ -60,7 +64,8 @@
       "status": "offline",
       "linkType": "fulltime",
       "coverage": "Dodge County and surrounding areas",
-      "sponsor": "KB4MQ"
+      "sponsor": "KB4MQ",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=145.210"
     },
     {
       "id": "repeater-montezuma",
@@ -72,7 +77,8 @@
       "status": "online",
       "linkType": "fulltime",
       "coverage": "Macon County and surrounding areas",
-      "sponsor": "KI4BEO"
+      "sponsor": "KI4BEO",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=146.640"
     },
     {
       "id": "repeater-bolingbroke",
@@ -84,7 +90,8 @@
       "status": "online",
       "linkType": "fulltime",
       "coverage": "Monroe County and surrounding areas",
-      "sponsor": "KJ4SPY and WB4NFG"
+      "sponsor": "KJ4SPY and WB4NFG",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=146.835"
     },
     {
       "id": "repeater-peach-county",
@@ -97,7 +104,8 @@
       "status": "online",
       "linkType": "fulltime",
       "coverage": "Peach County and surrounding areas",
-      "sponsor": "WX4PCH, Peach County Amateur Radio Club"
+      "sponsor": "WX4PCH, Peach County Amateur Radio Club",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=145.290"
     },
     {
       "id": "repeater-taylor-county",
@@ -109,7 +117,8 @@
       "status": "online",
       "linkType": "fulltime",
       "coverage": "Taylor County and surrounding areas",
-      "sponsor": "Middle Georgia Radio Association"
+      "sponsor": "Middle Georgia Radio Association",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=444.950"
     },
     {
       "id": "repeater-cochran",
@@ -120,7 +129,8 @@
       "callsign": "K4DBN",
       "status": "online",
       "linkType": "fulltime",
-      "coverage": "Bleckley County and surrounding areas"
+      "coverage": "Bleckley County and surrounding areas",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=145.490"
     },
     {
       "id": "repeater-sandersville",
@@ -131,7 +141,8 @@
       "callsign": "W4SAN",
       "status": "online",
       "linkType": "fulltime",
-      "coverage": "Washington County and surrounding areas"
+      "coverage": "Washington County and surrounding areas",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=145.270"
     },
     {
       "id": "repeater-milledgeville",
@@ -144,7 +155,8 @@
       "statusText": "Online Soon",
       "linkType": "fulltime",
       "coverage": "Baldwin County and surrounding areas",
-      "sponsor": "Milledgeville Amateur Radio Club"
+      "sponsor": "Milledgeville Amateur Radio Club",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.135"
     },
     {
       "id": "repeater-warner-robins",
@@ -157,7 +169,8 @@
       "status": "online",
       "linkType": "parttime",
       "coverage": "Houston County and surrounding areas",
-      "club": "Central Georgia Amateur Radio Club"
+      "club": "Central Georgia Amateur Radio Club",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=146.850"
     },
     {
       "id": "repeater-warner-robins-hmc-vhf",
@@ -170,7 +183,8 @@
       "status": "online",
       "linkType": "parttime",
       "coverage": "Houston County and surrounding areas",
-      "sponsor": "WM4B and Houston Medical Center"
+      "sponsor": "WM4B and Houston Medical Center",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=146.670"
     },
     {
       "id": "repeater-warner-robins-hmc-uhf",
@@ -183,7 +197,8 @@
       "status": "online",
       "linkType": "parttime",
       "coverage": "Houston County and surrounding areas",
-      "features": "AllStarLink Node 48166"
+      "features": "AllStarLink Node 48166",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.150"
     },
     {
       "id": "repeater-macon-ema-vhf",
@@ -196,7 +211,8 @@
       "status": "online",
       "linkType": "parttime",
       "coverage": "Bibb County and surrounding areas",
-      "sponsor": "WX4EMA (Macon/Bibb Emergency Management Agency)"
+      "sponsor": "WX4EMA (Macon/Bibb Emergency Management Agency)",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.015"
     },
     {
       "id": "repeater-macon-ema-uhf",
@@ -209,7 +225,8 @@
       "status": "online",
       "linkType": "parttime",
       "coverage": "Bibb County and surrounding areas",
-      "sponsor": "WX4EMA (Macon/Bibb Emergency Management Agency)"
+      "sponsor": "WX4EMA (Macon/Bibb Emergency Management Agency)",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=443.075"
     },
     {
       "id": "repeater-thomaston",
@@ -222,7 +239,8 @@
       "linkType": "parttime",
       "coverage": "Upson County and surrounding areas",
       "sponsor": "W4OHH (West Central Georgia Amateur Radio Association)",
-      "features": "Historic Repeater - One of the oldest repeaters in Georgia"
+      "features": "Historic Repeater - One of the oldest repeaters in Georgia",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.390"
     },
     {
       "id": "skywarn-fayetteville",
@@ -232,7 +250,8 @@
       "tone": "77.0",
       "status": "standby",
       "linkType": "skywarn",
-      "function": "Primary link to NWS Peachtree City for SKYWARN operations"
+      "function": "Primary link to NWS Peachtree City for SKYWARN operations",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=444.600"
     },
     {
       "id": "skywarn-tyrone",
@@ -242,7 +261,8 @@
       "tone": "77.0",
       "status": "standby",
       "linkType": "skywarn",
-      "function": "Backup link to NWS for redundancy"
+      "function": "Backup link to NWS for redundancy",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=444.675"
     },
     {
       "id": "skywarn-thomaston",
@@ -252,7 +272,8 @@
       "tone": "131.8",
       "status": "standby",
       "linkType": "skywarn",
-      "function": "Alternate connection point for SKYWARN operations"
+      "function": "Alternate connection point for SKYWARN operations",
+      "repeaterbookUrl": "https://www.repeaterbook.com/repeaters/index.php?state_id=13&freq=147.390"
     }
   ]
 }
