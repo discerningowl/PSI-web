@@ -166,10 +166,14 @@ function renderIndexRepeaters() {
 function renderRepeatersPage() {
     if (!repeatersData) return;
 
-    // Sort repeaters by frequency for the quick reference table
+    // Sort repeaters alphabetically by location for the quick reference table
     const sortedRepeaters = repeatersData.repeaters
         .filter(r => r.linkType !== 'skywarn')
-        .sort((a, b) => parseFloat(a.frequency) - parseFloat(b.frequency));
+        .sort((a, b) => {
+            const locA = (a.locationShort || a.location).toLowerCase();
+            const locB = (b.locationShort || b.location).toLowerCase();
+            return locA.localeCompare(locB);
+        });
 
     // Render quick reference table
     const tableBody = document.getElementById('quick-reference-table');
