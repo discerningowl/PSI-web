@@ -37,134 +37,441 @@
         <main>
 
             <div class="content-section">
-                <h2>Peach State Intertie Repeaters</h2>
-                <p>The following repeaters make up the Peach State Emergency Intertie System, providing extensive coverage across Central Georgia.</p>
-            </div>
+                <h2>Peach State Intertie Repeater Directory</h2>
+                <p>The Peach State Intertie consists of 13+ linked repeaters providing extensive coverage across Central Georgia. Our system serves amateur radio operators with reliable emergency communications and general use capabilities.</p>
 
-            <!-- Individual Repeater Details -->
-
-            <!-- IRWINTON VHF -->
-            <div class="content-section">
-                <h3>IRWINTON - 147.240+ (77.0 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Irwinton is sponsored by WB4NFG and covers Wilkinson and surrounding counties.</p>
-            </div>
-
-            <!-- IRWINTON UHF Hub -->
-            <div class="content-section">
-                <h3>IRWINTON - 443.275+ (77.0 Tone) "Hub Repeater"</h3>
-                <p><strong>Full time link to the intertie</strong></p>
                 <div class="highlight-box">
-                    <p><strong>Irwinton is the home of the UHF hub repeaters for the intertie.</strong></p>
-                    <p>All repeaters in the intertie are processed at the hub repeater.</p>
-                    <p>Emergency power generator with automatic transfer switch is located at site.</p>
+                    <p class="text-center"><strong>All repeaters are open for general use by licensed amateur radio operators</strong></p>
+                    <p class="text-center">Please observe proper amateur radio operating procedures and FCC regulations</p>
                 </div>
             </div>
 
-            <!-- WARNER ROBINS -->
+            <!-- Quick Reference Table -->
             <div class="content-section">
-                <h3>WARNER ROBINS - 146.850- (No Tone)</h3>
-                <p><strong>Part time link to the intertie</strong></p>
-                <p>Warner Robins is the club repeater of the Central Georgia Amateur Radio Club and covers Houston and surrounding counties.</p>
+                <h2>Quick Reference Guide</h2>
+                <p>Quick lookup table for all repeaters in the system:</p>
+
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                        <thead>
+                            <tr style="background-color: var(--primary-blue); color: white;">
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Frequency</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Location</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Tone</th>
+                                <th style="padding: 10px; text-align: left; border: 1px solid #ddd;">Callsign</th>
+                                <th style="padding: 10px; text-align: center; border: 1px solid #ddd;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>145.210−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Eastman</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">103.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">KB4MQ</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status offline">Offline</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>145.270−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Sandersville</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">77.0</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">W4SAN</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>145.290−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Peach County (Byron)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">82.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WX4PCH</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>145.490−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Cochran</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">77.0</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">K4DBN</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>146.640−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Montezuma</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">97.4</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">KI4BEO</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>146.670−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Warner Robins (HMC)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">82.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WM4B</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>146.835−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Bolingbroke</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">77.0</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WB4NFG</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>146.850−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Warner Robins</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">88.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WA4ORT</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>146.895−</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Macon</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">88.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">KD4UTQ</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>147.015+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Macon (EMA)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">88.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WX4EMA</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>147.135+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Milledgeville</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">123.0</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">K4MRC</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status standby">Online Soon</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>147.150+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Cedar Grove</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">123.0</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">K4DBN</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>147.240+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Irwinton</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">77.0</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">K4DBN</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>147.390+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Thomaston</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">131.8</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">W4OHH</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>443.075+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Macon (EMA)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">88.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WX4EMA</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>443.150+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Warner Robins (HMC)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">82.5</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WM4B</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>443.275+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Irwinton (HUB)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">77.0</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">K4DBN</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 8px; border: 1px solid #ddd;"><strong>444.950+</strong></td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">Taylor County (Butler)</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">107.2</td>
+                                <td style="padding: 8px; border: 1px solid #ddd;">WR4MG</td>
+                                <td style="padding: 8px; border: 1px solid #ddd; text-align: center;"><span class="status online">Online</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- CEDARGROVE -->
+            <!-- Full Time Linked Repeaters -->
             <div class="content-section">
-                <h3>CEDARGROVE - 147.150+ (123.0 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Cedargrove is sponsored by WA4FRI and covers Laurens and surrounding counties.</p>
+                <h2>Full Time Linked Repeaters</h2>
+                <p>These repeaters are permanently connected to the Peach State Intertie network:</p>
+
+                <ul class="repeater-list">
+                    <li class="repeater-item">
+                        <span class="repeater-name">Irwinton (HUB)</span>
+                        <span class="repeater-frequency">443.275+ (77.0) • K4DBN</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px; background-color: #f0f8ff; border-left: 3px solid var(--primary-blue);">
+                        <strong>System Hub Repeater</strong> - All intertie traffic is processed through this UHF hub<br>
+                        <em>Features: Emergency power generator with automatic transfer switch</em><br>
+                        <strong>Coverage:</strong> Wilkinson County and surrounding areas<br>
+                        <strong>Sponsor:</strong> WB4NFG
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Irwinton</span>
+                        <span class="repeater-frequency">147.24+ (77.0) • K4DBN</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Wilkinson County and surrounding areas<br>
+                        <strong>Sponsor:</strong> WB4NFG
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Macon</span>
+                        <span class="repeater-frequency">146.895- (88.5) • KD4UTQ</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Bibb County and surrounding areas<br>
+                        <strong>Sponsors:</strong> KD4UTQ and WB4NFG
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Cedar Grove</span>
+                        <span class="repeater-frequency">147.150+ (123.0) • K4DBN</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Laurens County and surrounding areas<br>
+                        <strong>Sponsor:</strong> WA4FRI
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Eastman</span>
+                        <span class="repeater-frequency">145.210- (103.5) • KB4MQ</span>
+                        <span class="status offline">Offline</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Dodge County and surrounding areas<br>
+                        <strong>Sponsor:</strong> KB4MQ
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Montezuma</span>
+                        <span class="repeater-frequency">146.640- (97.4) • KI4BEO</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Macon County and surrounding areas<br>
+                        <strong>Sponsor:</strong> KI4BEO
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Bolingbroke</span>
+                        <span class="repeater-frequency">146.835- (77.0) • WB4NFG</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Monroe County and surrounding areas<br>
+                        <strong>Sponsors:</strong> KJ4SPY and WB4NFG
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Peach County (Byron Fire Dept)</span>
+                        <span class="repeater-frequency">145.290- (82.5) • WX4PCH</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Peach County and surrounding areas<br>
+                        <strong>Sponsor:</strong> WX4PCH, Peach County Amateur Radio Club
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Taylor County (Butler)</span>
+                        <span class="repeater-frequency">444.950+ (107.2) • WR4MG</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Taylor County and surrounding areas<br>
+                        <strong>Sponsor:</strong> Middle Georgia Radio Association
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Cochran</span>
+                        <span class="repeater-frequency">145.490- (77.0) • K4DBN</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Bleckley County and surrounding areas
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Sandersville</span>
+                        <span class="repeater-frequency">145.270- (77.0) • W4SAN</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Washington County and surrounding areas
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Milledgeville</span>
+                        <span class="repeater-frequency">147.135+ (123.0) • K4MRC</span>
+                        <span class="status standby">Online Soon</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Baldwin County and surrounding areas<br>
+                        <strong>Sponsor:</strong> Milledgeville Amateur Radio Club
+                    </li>
+                </ul>
             </div>
 
-            <!-- EASTMAN -->
+            <!-- Part Time Linked Repeaters -->
             <div class="content-section">
-                <h3>EASTMAN - 145.210- (103.5 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Eastman is sponsored by KB4MQ and covers Dodge and surrounding counties.</p>
+                <h2>Automatic Linked or Linked On Command (Part Time Linked)</h2>
+                <p>These repeaters connect to the intertie automatically during specific events or can be linked on command:</p>
+
+                <ul class="repeater-list">
+                    <li class="repeater-item">
+                        <span class="repeater-name">Warner Robins</span>
+                        <span class="repeater-frequency">146.850- (88.5) • WA4ORT</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Club:</strong> Central Georgia Amateur Radio Club<br>
+                        <strong>Coverage:</strong> Houston County and surrounding areas
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Warner Robins (Houston Medical Center)</span>
+                        <span class="repeater-frequency">146.670- (82.5) • WM4B</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Houston County and surrounding areas<br>
+                        <strong>Sponsor:</strong> WM4B and Houston Medical Center
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Warner Robins (Houston Medical Center)</span>
+                        <span class="repeater-frequency">443.150+ (82.5) • WM4B</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Features:</strong> AllStarLink Node 48166<br>
+                        <strong>Coverage:</strong> Houston County and surrounding areas
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Macon (Macon/Bibb EMA)</span>
+                        <span class="repeater-frequency">147.015+ (88.5) • WX4EMA</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Bibb County and surrounding areas<br>
+                        <strong>Sponsor:</strong> WX4EMA (Macon/Bibb Emergency Management Agency)
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Macon (Macon/Bibb EMA)</span>
+                        <span class="repeater-frequency">443.075+ (88.5) • WX4EMA</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Coverage:</strong> Bibb County and surrounding areas<br>
+                        <strong>Sponsor:</strong> WX4EMA (Macon/Bibb Emergency Management Agency)
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Thomaston</span>
+                        <span class="repeater-frequency">147.390+ (131.8) • W4OHH</span>
+                        <span class="status online">Online</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px; background-color: #fff8dc; border-left: 3px solid var(--green-accent);">
+                        <strong>Historic Repeater</strong> - One of the oldest repeaters in Georgia<br>
+                        <strong>Coverage:</strong> Upson County and surrounding areas<br>
+                        <strong>Sponsor:</strong> W4OHH (West Central Georgia Amateur Radio Association)
+                    </li>
+                </ul>
             </div>
 
-            <!-- PEACH COUNTY -->
+            <!-- Skywarn Link Section -->
             <div class="content-section">
-                <h3>PEACH COUNTY - 145.290- (82.5 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Peach County is sponsored by WX4PCH, Peach County Amateur Radio Club. It covers Peach and surrounding counties.</p>
-            </div>
-
-            <!-- MACON -->
-            <div class="content-section">
-                <h3>MACON - 146.895- (88.5 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Macon is sponsored by KD4UTQ and WB4NFG covering Bibb and surrounding counties.</p>
-            </div>
-
-            <!-- MONTEZUMA -->
-            <div class="content-section">
-                <h3>MONTEZUMA - 146.640- (97.4 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Montezuma is sponsored by KI4BEO and covers Macon and surrounding counties.</p>
-            </div>
-
-            <!-- MACON EMA -->
-            <div class="content-section">
-                <h3>MACON - 147.015+/443.075+ (88.5 Tone)</h3>
-                <p><strong>Part time link to the intertie</strong></p>
-                <p>Macon is sponsored by WX4EMA (MACON/BIBB EMA) and covers Bibb and surrounding counties.</p>
-            </div>
-
-            <!-- WARNER ROBINS HMC -->
-            <div class="content-section">
-                <h3>WARNER ROBINS - 146.670-/443.150+ (82.5 Tone)</h3>
-                <p><strong>Part time link to the intertie</strong></p>
-                <p>Warner Robins is sponsored by WM4B and the Houston Medical Center and covers Houston and surrounding counties.</p>
-            </div>
-
-            <!-- BOLLINGBROKE -->
-            <div class="content-section">
-                <h3>BOLLINGBROKE - 146.835- (77.0 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Bollingbroke is sponsored by KJ4SPY and WB4NFG and covers Monroe and surrounding counties.</p>
-            </div>
-
-            <!-- THOMASTON -->
-            <div class="content-section">
-                <h3>THOMASTON - 147.390+ (131.8 Tone)</h3>
-                <p><strong>Part time link to the intertie</strong></p>
-                <p>Sponsored by W40HH (The West Central Ga. Amateur Radio Aso.) and covers Upson and surrounding counties.</p>
-                <p><em>One of the oldest repeaters in Georgia.</em></p>
-            </div>
-
-            <!-- TAYLOR COUNTY -->
-            <div class="content-section">
-                <h3>TAYLOR COUNTY - 444.950+ (107.2 Tone)</h3>
-                <p><strong>Full time link to the intertie</strong></p>
-                <p>Sponsored by Middle Georgia Radio Aso. and covers Taylor and surrounding counties.</p>
-            </div>
-
-            <!-- MILLEDGEVILLE -->
-            <div class="content-section">
-                <h3>MILLEDGEVILLE - 147.135+ (123.0 Tone)</h3>
-                <p>Sponsored by the Milledgeville Amateur Radio Club and covers Baldwin and surrounding counties.</p>
-            </div>
-
-            <!-- SKYWARN LINK -->
-            <div class="content-section">
-                <h2>Skywarn Weather Link</h2>
+                <h2>Georgia Skywarn Weather Link Repeaters</h2>
                 <div class="highlight-box important">
-                    <p class="bold text-center">Located at Bollingbroke Site</p>
-                    <p class="text-center">Hub Repeaters for link to Peachtree City National Weather Service</p>
+                    <p class="bold text-center">Monroe County Link to National Weather Service</p>
+                    <p class="text-center">Hub repeaters connecting to Peachtree City National Weather Service for Georgia Skywarn Net</p>
+                    <p class="text-center"><em>Located at Bolingbroke Site</em></p>
                 </div>
 
                 <ul class="repeater-list">
                     <li class="repeater-item">
-                        <span class="repeater-name">FAYETTEVILLE (Primary)</span>
-                        <span class="repeater-frequency">444.600+ (77.0 Tone)</span>
+                        <span class="repeater-name">Fayetteville (Primary)</span>
+                        <span class="repeater-frequency">444.600+ (77.0)</span>
                         <span class="status standby">Standby</span>
                     </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Function:</strong> Primary link to NWS Peachtree City for Skywarn operations
+                    </li>
+
                     <li class="repeater-item">
-                        <span class="repeater-name">TYRONE (Back-up)</span>
-                        <span class="repeater-frequency">444.675+ (77.0 Tone)</span>
+                        <span class="repeater-name">Tyrone (Back-up)</span>
+                        <span class="repeater-frequency">444.675+ (77.0)</span>
                         <span class="status standby">Standby</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Function:</strong> Backup link to NWS for redundancy
+                    </li>
+
+                    <li class="repeater-item">
+                        <span class="repeater-name">Thomaston (Alternate Remote Base)</span>
+                        <span class="repeater-frequency">147.390+ (131.8)</span>
+                        <span class="status standby">Standby</span>
+                    </li>
+                    <li style="margin-left: 20px; padding: 10px;">
+                        <strong>Function:</strong> Alternate connection point for Skywarn operations
                     </li>
                 </ul>
+            </div>
+
+            <!-- Technical Information -->
+            <div class="content-section">
+                <h2>Technical Information</h2>
+
+                <div class="highlight-box">
+                    <h3>About PL Tones (CTCSS)</h3>
+                    <p>PL (Private Line) tones, also known as CTCSS (Continuous Tone-Coded Squelch System), are sub-audible tones that allow your radio to access the repeater. You must program the correct PL tone listed for each repeater.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>Frequency Offsets</h3>
+                    <p><strong>Standard Offsets in Georgia:</strong></p>
+                    <ul>
+                        <li>2-meter (VHF): ± 600 kHz</li>
+                        <li>70-cm (UHF): ± 5 MHz</li>
+                    </ul>
+                    <p><strong>Offset Notation:</strong></p>
+                    <ul>
+                        <li><strong>Minus (−):</strong> Transmit below the repeater frequency</li>
+                        <li><strong>Plus (+):</strong> Transmit above the repeater frequency</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>How the Intertie Works</h3>
+                    <p>The Peach State Intertie uses UHF frequencies to link member repeaters together. The <strong>Irwinton 443.275+ Hub Repeater</strong> serves as the central processing point for all intertie traffic, providing unified coverage across Central Georgia.</p>
+                    <p>This linking technology gives handheld and mobile radio users coverage abilities they've never had before, significantly enhancing emergency communications and Skywarn capabilities.</p>
+                </div>
+            </div>
+
+            <!-- Join Section -->
+            <div class="content-section">
+                <h2>Join the Peach State Intertie</h2>
+                <p>Repeater owners interested in becoming part of the Peach State Intertie System are encouraged to contact us. We're always looking to expand coverage and strengthen our emergency communications network across Georgia.</p>
+                <p class="text-center text-large bold">
+                    <a href="mailto:PEACHSTATEINTERTIE@PEACHSTATEINTERTIE.COM">PEACHSTATEINTERTIE@PEACHSTATEINTERTIE.COM</a>
+                </p>
+
+                <div class="highlight-box">
+                    <p class="text-center"><strong>Data sourced from RepeaterBook and local system operators</strong></p>
+                    <p class="text-center"><em>Last verified: January 2026</em></p>
+                </div>
             </div>
 
         </main>
