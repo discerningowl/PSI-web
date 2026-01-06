@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Peach body -->
+  <circle cx="32" cy="34" r="26" fill="#FFB366"/>
+
+  <!-- Peach gradient/shading -->
+  <ellipse cx="38" cy="34" rx="12" ry="16" fill="#FF9E66" opacity="0.6"/>
+
+  <!-- Red/pink blush -->
+  <ellipse cx="26" cy="32" rx="10" ry="12" fill="#FF6B6B" opacity="0.4"/>
+
+  <!-- Peach crease/indent line -->
+  <path d="M 32 10 Q 34 30 32 58" stroke="#E69955" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Leaf -->
+  <ellipse cx="28" cy="12" rx="8" ry="5" fill="#6BAE5C" transform="rotate(-30 28 12)"/>
+
+  <!-- Leaf vein -->
+  <line x1="28" y1="10" x2="28" y2="14" stroke="#5A9B4D" stroke-width="1"/>
+
+  <!-- Stem -->
+  <rect x="31" y="8" width="2" height="6" fill="#8B6F47" rx="1"/>
+</svg>
