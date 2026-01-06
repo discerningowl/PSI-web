@@ -141,8 +141,8 @@ The `includes.js` script automatically sets the `class="active"` on the navigati
 ### Update Contact Information
 
 Contact info appears in the footer of all pages:
-- Intertie Manager: K4DBN@PEACHSTATEINTERTIE.COM
-- Assistant Manager & Webmaster: WB4NFG@PEACHSTATEINTERTIE.COM
+- Intertie Manager: k4dbn@peachstateintertie.com
+- Assistant Manager & Webmaster: wb4nfg@peachstateintertie.com
 
 To update: Edit `footer.html` and save. Changes appear on all pages automatically.
 
