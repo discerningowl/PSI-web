@@ -14,10 +14,87 @@ This is a static HTML website that uses a simple JavaScript include system for h
 
 - **HTML Pages**: index.html, diagram.html, repeaters.html, nets.html, skywarn.html, blog.html, 404.html
 - **Stylesheet**: styles.css (controls ALL styling)
-- **JavaScript**: includes.js (loads header and footer dynamically)
+- **JavaScript**:
+  - includes.js (loads header and footer dynamically)
+  - repeaters.js (renders repeater data from JSON)
+- **Data**: repeaters.json (single source of truth for all repeater information)
 - **Templates**: header.html and footer.html (loaded dynamically via JavaScript)
-- **Images**: images/ directory (includes PSInew.jpg)
+- **Images**: images/ directory
+- **Documentation**: REPEATERS_DATA.md (detailed schema documentation for repeaters.json)
 - **Deployment**: .github/workflows/deploy.yml (GitHub Actions for auto-deployment to GitHub Pages)
+
+## Repeater Data Management
+
+### Overview
+
+All repeater information is stored in a single JSON database file: `repeaters.json`
+
+This file contains complete information for all repeaters in the Peach State Intertie system:
+- **Full-time linked repeaters** (12 repeaters)
+- **Part-time linked repeaters** (6 repeaters)
+- **SKYWARN standby repeaters** (3 repeaters)
+
+### How It Works
+
+1. **repeaters.json** - Single source of truth containing all repeater data
+2. **repeaters.js** - JavaScript that fetches and renders the data
+3. **index.html** - Displays simplified repeater lists
+4. **repeaters.html** - Displays detailed repeater directory with full information
+
+### Updating Repeater Information
+
+**IMPORTANT**: Never edit repeater information directly in HTML files. Always edit `repeaters.json`.
+
+To update repeater data:
+
+1. Open `repeaters.json`
+2. Find the repeater object by its `id` field
+3. Edit the relevant fields (frequency, status, tone, etc.)
+4. Save the file
+5. Changes automatically appear on BOTH index.html and repeaters.html
+
+### Adding a New Repeater
+
+1. Open `repeaters.json`
+2. Add a new repeater object to the `repeaters` array
+3. Include all required fields (see REPEATERS_DATA.md for schema)
+4. Place it with other repeaters of the same `linkType`
+5. Save and test both index.html and repeaters.html
+
+### Field Documentation
+
+For complete documentation of all JSON fields, data types, and examples, see:
+
+**📄 REPEATERS_DATA.md** - Comprehensive schema documentation
+
+This document includes:
+- All required and optional fields
+- Field descriptions and valid values
+- Complete examples
+- How to add/edit repeater data
+- Data integrity guidelines
+
+### Common Repeater Updates
+
+**Mark a repeater offline:**
+```json
+"status": "offline"
+```
+
+**Change a repeater's tone:**
+```json
+"tone": "88.5"
+```
+
+**Update coverage area:**
+```json
+"coverage": "Expanded coverage now includes surrounding counties"
+```
+
+**Add special features:**
+```json
+"features": "AllStarLink Node 48166, Emergency backup power"
+```
 
 ## Header and Footer Management
 
