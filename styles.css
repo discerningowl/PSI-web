@@ -382,3 +382,11 @@ footer a:hover {
         font-size: 1.5rem;
     }
 }
+
+/* ========================================
+   ANCHOR LINK SCROLL OFFSET
+   ======================================== */
+/* Offset anchor links to account for sticky navigation */
+[id^="repeater-"] {
+    scroll-margin-top: 80px;
+}
