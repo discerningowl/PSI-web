@@ -16,7 +16,7 @@ This is a static HTML website with no JavaScript dependencies. All pages are sta
 - **Stylesheet**: styles.css (controls ALL styling)
 - **Images**: images/ directory + PSInew.jpg
 - **Templates**: header.html and footer.html (reference only - see below)
-- **Deployment**: .do/ directory (DigitalOcean App Platform config)
+- **Deployment**: .github/workflows/deploy.yml (GitHub Actions for auto-deployment to GitHub Pages)
 
 ## Header and Footer Management
 
@@ -105,21 +105,33 @@ All colors are defined in styles.css at the top (CSS variables):
 
 ## Deployment
 
-### DigitalOcean App Platform
+### GitHub Pages + GitHub Actions
 
-Configuration is in `.do/` directory:
-- `app.yaml` - Main deployment config
-- `deploy.template.yaml` - Deployment template
+The site is automatically deployed to GitHub Pages using GitHub Actions.
 
+**Workflow File**: `.github/workflows/deploy.yml`
 **Repository**: discerningowl/PSI-web
 **Domain**: peachstateintertie.com
-**Auto-deploy**: Enabled on main branch
+**Auto-deploy**: Triggered on every push to main branch
 
-### Making Changes Live
+#### How It Works
+
+1. When you push to the main branch, GitHub Actions automatically runs
+2. The workflow deploys all files to GitHub Pages
+3. Changes go live within 1-2 minutes
+
+#### Making Changes Live
 
 1. Commit changes to main branch
 2. Push to GitHub
-3. DigitalOcean automatically deploys
+3. GitHub Actions automatically builds and deploys
+4. Check the Actions tab in GitHub to monitor deployment status
+
+#### Legacy DigitalOcean Configuration
+
+The `.do/` directory contains legacy DigitalOcean App Platform configuration files. These are kept for reference but are no longer actively used:
+- `app.yaml` - Legacy deployment config
+- `deploy.template.yaml` - Legacy deployment template
 
 ## Development Principles
 
